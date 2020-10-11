@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+      <!-- Required meta tags always come first -->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+      <!-- Bootstrap CSS -->
+      <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+      <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
+      <link rel="stylesheet" href="node_modules/bootstrap-social/bootstrap-social.css">
+      <link rel="stylesheet" href="css/styles.css">
+
+    <title>Plant Selector</title>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row row-content">
+            <div class="col">
+                <div class="carousel" id="instructions" data-ride="carousel">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <nav class="navbar">
+        <a href=""></a>
+        <button><span></span></button>
+
+        <ul class="navbar-nav">
+
+        </ul>
+        <form action="">
+            <input id="plantsearch" type="search">
+        </form>
+    </nav>
+
+    <div class="container" id="plantlist">
+        <div class="row row-content">
+            <div class="col-sm-4">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="..." alt="">
+                    <div class="card-body">
+                    <h5 class="card-title">I'm a plant</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                    <span class="keywords" style="display: none;">plant</span>
+                    <span class="height"></span>
+                    <span class="light"></span>
+                    <span class="care"></span>
+                </div>
+
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="..." alt="">
+                    <div class="card-body">
+                    <h5 class="card-title">I'm not a plant</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                    <span class="keywords" style="display: none;">dog</span>
+                    <span class="height"></span>
+                    <span class="light"></span>
+                    <span class="care"></span>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS. -->
+    <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
+    <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function(){
+          $("#plantsearch").on("keyup", function() {
+            var value = $(this).val().toLowerCase();
+            $("#plantlist .keywords").filter(function() {
+              $(this).parent().toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            });
+          });
+        });
+    </script>
+
+
+</body>
+
+</html>

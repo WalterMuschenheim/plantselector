@@ -8,9 +8,20 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "lite": "lite-server"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WalterMuschenheim/plantselector.git"
+  },
   "author": "Walter Muschenheim",
   "license": "ISC",
+  "homepage": "https://github.com/WalterMuschenheim/plantselector.git#readme",
   "devDependencies": {
     "lite-server": "^2.5.4"
+  },
+  "dependencies": {
+    "bootstrap": "^4.5.2",
+    "font-awesome": "^4.7.0",
+    "jquery": "^3.5.1",
+    "popper.js": "^1.16.1"
   }
 }
