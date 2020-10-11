@@ -32,18 +32,47 @@
         <a href=""></a>
         <button><span></span></button>
 
-        <ul class="navbar-nav">
+        <form class="form-inline">
 
-        </ul>
-        <form action="">
-            <input id="plantsearch" type="search">
+            <div class="form-group">
+                <select id="plantheight" class="custom-select">
+                    <option value=" ">Height</option>
+                    <option value="0 to 1 foot">0 to 1 foot</option>
+                    <option value="1 to 3 feet">1 to 3 feet</option>
+                    <option value="3 to 6 feet">3 to 6 feet</option>
+                    <option value="6 to 9 feet">6 to 9 feet</option>
+                    <option value="over 9 feet">over 9 feet</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <select id="plantlight" class="custom-select">
+                    <option value=" ">Light</option>
+                    <option value="low indirect">low indirect</option>
+                    <option value="bright indirect">bright indirect</option>
+                    <option" value="partial direct">partial direct</option>
+                    <option value="full direct">full direct</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <select id="plantcare" class="custom-select">
+                    <option value=" ">Care</option>
+                    <option value="loves neglect">loves neglect</option>
+                    <option value="tolerates neglect">tolerates neglect</option>
+                    <option value="needs attention">needs attention</option>
+                    <option value="needs extra attention">needs extra attention</option>
+                </select>
+            </div>
+        
+            <input class="form-control" id="plantsearch" type="search" placeholder="Keyword Search">
         </form>
     </nav>
 
     <div class="container" id="plantlist">
         <div class="row row-content">
-            <div class="col-sm-4">
-                <div class="card" style="width: 18rem;">
+            <div class="card-columns">
+                <div class="card">
                     <img class="card-img-top" src="..." alt="">
                     <div class="card-body">
                     <h5 class="card-title">I'm a plant</h5>
@@ -51,12 +80,12 @@
                     <a href="#" class="btn btn-primary">Go somewhere</a>
                     </div>
                     <span class="keywords" style="display: none;">plant</span>
-                    <span class="height"></span>
-                    <span class="light"></span>
-                    <span class="care"></span>
+                    <span class="height">6 to 9 feet</span>
+                    <span class="light">low indirect</span>
+                    <span class="care">needs attention</span>
                 </div>
 
-                <div class="card" style="width: 18rem;">
+                <div class="card">
                     <img class="card-img-top" src="..." alt="">
                     <div class="card-body">
                     <h5 class="card-title">I'm not a plant</h5>
@@ -64,9 +93,87 @@
                     <a href="#" class="btn btn-primary">Go somewhere</a>
                     </div>
                     <span class="keywords" style="display: none;">dog</span>
-                    <span class="height"></span>
-                    <span class="light"></span>
-                    <span class="care"></span>
+                    <span class="height">1 to 3 feet</span>
+                    <span class="light">full direct</span>
+                    <span class="care">needs attention</span>
+                </div>
+
+                <div class="card">
+                    <img class="card-img-top" src="..." alt="">
+                    <div class="card-body">
+                    <h5 class="card-title">I'm a plant</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                    <span class="keywords" style="display: none;">plant</span>
+                    <span class="height">6 to 9 feet</span>
+                    <span class="light">full direct</span>
+                    <span class="care">loves neglect</span>
+                </div>
+
+                <div class="card">
+                    <img class="card-img-top" src="..." alt="">
+                    <div class="card-body">
+                    <h5 class="card-title">I'm not a plant</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                    <span class="keywords" style="display: none;">dog</span>
+                    <span class="height">1 to 3 feet</span>
+                    <span class="light">low indirect</span>
+                    <span class="care">loves neglect</span>
+                </div>
+
+                <div class="card">
+                    <img class="card-img-top" src="..." alt="">
+                    <div class="card-body">
+                    <h5 class="card-title">I'm a plant</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                    <span class="keywords" style="display: none;">plant</span>
+                    <span class="height">6 to 9 feet</span>
+                    <span class="light">full direct</span>
+                    <span class="care">needs attention</span>
+                </div>
+
+                <div class="card">
+                    <img class="card-img-top" src="..." alt="">
+                    <div class="card-body">
+                    <h5 class="card-title">I'm not a plant</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                    <span class="keywords" style="display: none;">dog</span>
+                    <span class="height">1 to 3 feet</span>
+                    <span class="light">low indirect</span>
+                    <span class="care">loves neglect</span>
+                </div>
+
+                <div class="card">
+                    <img class="card-img-top" src="..." alt="">
+                    <div class="card-body">
+                    <h5 class="card-title">I'm a plant</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                    <span class="keywords" style="display: none;">plant</span>
+                    <span class="height">6 to 9 feet</span>
+                    <span class="light">low indirect</span>
+                    <span class="care">loves neglect</span>
+                </div>
+
+                <div class="card">
+                    <img class="card-img-top" src="..." alt="">
+                    <div class="card-body">
+                    <h5 class="card-title">I'm not a plant</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                    <span class="keywords" style="display: none;">dog</span>
+                    <span class="height">1 to 3 feet</span>
+                    <span class="light">full direct</span>
+                    <span class="care">needs attention</span>
                 </div>
 
             </div>
@@ -78,13 +185,47 @@
     <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <script>
+
+        function plantfilter() {
+            var value = $("#plantsearch").val().toLowerCase();
+            var pheight = $("#plantheight").val().toLowerCase();
+            var plight = $("#plantlight").val().toLowerCase();
+            var pcare = $("#plantcare").val().toLowerCase();
+            console.log(pheight);
+            $("#plantlist .card").filter(function() {
+              $(this).toggle($(this).children(".height").text().toLowerCase().indexOf(pheight) > -1 && $(this).children(".light").text().toLowerCase().indexOf(plight) > -1 && $(this).children(".care").text().toLowerCase().indexOf(pcare) > -1 && $(this).children(".keywords").text().toLowerCase().indexOf(value) > -1)
+            });
+        }
+
         $(document).ready(function(){
-          $("#plantsearch").on("keyup", function() {
-            var value = $(this).val().toLowerCase();
-            $("#plantlist .keywords").filter(function() {
+            $("#plantsearch").on("keyup", function() {
+                plantfilter();
+            });
+
+            $("select").on("change", function() {
+                plantfilter();
+            });
+
+          /*$("#plantheight").on("change", function() {
+            var pheight = $(this).val().toLowerCase();
+            $("#plantlist .height").filter(function() {
               $(this).parent().toggle($(this).text().toLowerCase().indexOf(value) > -1)
             });
           });
+
+          $("#plantlight").on("change", function() {
+            var plight = $(this).val().toLowerCase();
+            $("#plantlist .light").filter(function() {
+              $(this).parent().toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            });
+          });
+
+          $("#plantcare").on("change", function() {
+            var pcare = $(this).val().toLowerCase();
+            $("#plantlist .care").filter(function() {
+              $(this).parent().toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            });
+          });*/
         });
     </script>
 
