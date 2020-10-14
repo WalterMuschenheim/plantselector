@@ -84,14 +84,22 @@
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
                 <div class="modal-body">
-                    <div id="modal-image-container">
-                        <div class="modal-popover"></div>
-                        <div class="modal-popover"></div>
-                        <div class="modal-popover"></div>
-                        <!-- dynamic image -->
-                    </div>
-                    <div id="modal-content-container">
-                        <!-- dynamic content -->
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-sm-5">
+                                <div class="modal-popover top"><a tabindex="0" role="button" data-toggle="popover" data-trigger="focus" title="Light" data-content=""></a></div>
+                                <div class="modal-popover middle"><a tabindex="0" role="button" data-toggle="popover" data-trigger="focus" title="Average Height" data-content=""></a></div>
+                                <div class="modal-popover bottom"><a tabindex="0" role="button" data-toggle="popover" data-trigger="focus" title="Care" data-content=""></a></div>
+                                <div id="modal-image-container">
+                                    <!-- dynamic image -->
+                                </div>
+                            </div>
+                            <div class="col-sm-7">
+                                <div id="modal-content-container">
+                                    <!-- dynamic content -->
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -266,8 +274,15 @@
             document.getElementById("plantlist-inner").innerHTML = cards += "</div>";
         };
 
-        addCards(plants, true, explainers);
-        
+        addCards(plants, false, explainers);
+
+        $(function () {
+            $('[data-toggle="popover"]').popover()
+        });
+
+        $('.popover-dismiss').popover({
+            trigger: 'focus'
+        });
 
         $('#plantModal').on('show.bs.modal', function (event) {
                 var button = $(event.relatedTarget);
@@ -275,8 +290,15 @@
                 var title = plants[integer].name;
                 var content = plants[integer].longDescription;
                 var image = plants[integer].imageURL;
+                var light = plants[integer].light;
+                var height = plants[integer].height;
+                var care = plants[integer].care;
+
                 $('#plantModal').find('.modal-title').html(title);
                 $('#plantModal').find('#modal-content-container').html('<p>' + content + '</p>');
+                $('#plantModal').find('.modal-popover.top a').attr('data-content', light);
+                $('#plantModal').find('.modal-popover.middle a').attr('data-content', height);
+                $('#plantModal').find('.modal-popover.bottom a').attr('data-content', care);
                 $('#plantModal').find('#modal-image-container').html('<img src="' + image + '" alt="' + title + '" class="img-fluid">');
             });
 
