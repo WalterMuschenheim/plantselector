@@ -29,7 +29,6 @@
     </div>
 
     <nav class="navbar">
-        <a href=""></a>
         <button><span></span></button>
 
         <form class="form-inline">
@@ -50,7 +49,7 @@
                     <option value=" ">Light</option>
                     <option value="low indirect">low indirect</option>
                     <option value="bright indirect">bright indirect</option>
-                    <option" value="partial direct">partial direct</option>
+                    <option value="partial direct">partial direct</option>
                     <option value="full direct">full direct</option>
                 </select>
             </div>
@@ -71,111 +70,30 @@
 
     <div class="container" id="plantlist">
         <div class="row row-content">
-            <div class="card-columns">
-                <div class="card">
-                    <img class="card-img-top" src="..." alt="">
-                    <div class="card-body">
-                    <h5 class="card-title">I'm a plant</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                    <span class="keywords" style="display: none;">plant</span>
-                    <span class="height">6 to 9 feet</span>
-                    <span class="light">low indirect</span>
-                    <span class="care">needs attention</span>
-                </div>
+            <div class="" id="plantlist-inner">
+                <!-- card element added dynamically for every plant in 'plants' array -->
+            </div>
+        </div>
+    </div>
 
-                <div class="card">
-                    <img class="card-img-top" src="..." alt="">
-                    <div class="card-body">
-                    <h5 class="card-title">I'm not a plant</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                    <span class="keywords" style="display: none;">dog</span>
-                    <span class="height">1 to 3 feet</span>
-                    <span class="light">full direct</span>
-                    <span class="care">needs attention</span>
+    <div id="plantModal" class="modal fade" role="dialog">
+        <div class="modal-dialog modal-lg" role="content">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title"><!--dynamic title--></h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
-
-                <div class="card">
-                    <img class="card-img-top" src="..." alt="">
-                    <div class="card-body">
-                    <h5 class="card-title">I'm a plant</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                <div class="modal-body">
+                    <div id="modal-image-container">
+                        <div class="modal-popover"></div>
+                        <div class="modal-popover"></div>
+                        <div class="modal-popover"></div>
+                        <!-- dynamic image -->
                     </div>
-                    <span class="keywords" style="display: none;">plant</span>
-                    <span class="height">6 to 9 feet</span>
-                    <span class="light">full direct</span>
-                    <span class="care">loves neglect</span>
-                </div>
-
-                <div class="card">
-                    <img class="card-img-top" src="..." alt="">
-                    <div class="card-body">
-                    <h5 class="card-title">I'm not a plant</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                    <div id="modal-content-container">
+                        <!-- dynamic content -->
                     </div>
-                    <span class="keywords" style="display: none;">dog</span>
-                    <span class="height">1 to 3 feet</span>
-                    <span class="light">low indirect</span>
-                    <span class="care">loves neglect</span>
                 </div>
-
-                <div class="card">
-                    <img class="card-img-top" src="..." alt="">
-                    <div class="card-body">
-                    <h5 class="card-title">I'm a plant</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                    <span class="keywords" style="display: none;">plant</span>
-                    <span class="height">6 to 9 feet</span>
-                    <span class="light">full direct</span>
-                    <span class="care">needs attention</span>
-                </div>
-
-                <div class="card">
-                    <img class="card-img-top" src="..." alt="">
-                    <div class="card-body">
-                    <h5 class="card-title">I'm not a plant</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                    <span class="keywords" style="display: none;">dog</span>
-                    <span class="height">1 to 3 feet</span>
-                    <span class="light">low indirect</span>
-                    <span class="care">loves neglect</span>
-                </div>
-
-                <div class="card">
-                    <img class="card-img-top" src="..." alt="">
-                    <div class="card-body">
-                    <h5 class="card-title">I'm a plant</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                    <span class="keywords" style="display: none;">plant</span>
-                    <span class="height">6 to 9 feet</span>
-                    <span class="light">low indirect</span>
-                    <span class="care">loves neglect</span>
-                </div>
-
-                <div class="card">
-                    <img class="card-img-top" src="..." alt="">
-                    <div class="card-body">
-                    <h5 class="card-title">I'm not a plant</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                    <span class="keywords" style="display: none;">dog</span>
-                    <span class="height">1 to 3 feet</span>
-                    <span class="light">full direct</span>
-                    <span class="care">needs attention</span>
-                </div>
-
             </div>
         </div>
     </div>
@@ -186,12 +104,187 @@
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <script>
 
+        var heightofplant = ["0 to 1 foot", "1 to 3 feet", "3 to 6 feet", "6 to 9 feet", "over 9 feet"];
+        var lightofplant = ["low indirect", "bright indirect", "partial direct", "full direct"];
+        var careofplant = ["loves neglect", "tolerates neglect", "needs attention", "needs extra attention"];
+
+        var plants= [
+            {
+                name: "Ficus",
+                imageURL: "img/ficus.jpg",
+                description: "Some quick example text to build on the card title and make up the bulk of the card's content.",
+                longDescription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque efficitur sagittis tellus, eget congue leo tempor quis. Nunc interdum ex nec felis commodo ultrices. Vestibulum non dui sit amet turpis ullamcorper condimentum. Quisque vitae finibus dolor. Donec at egestas nisl, at gravida ex. Etiam euismod leo tellus, eu lobortis justo venenatis non. Duis vel augue nec elit placerat aliquam sit amet a elit. Fusce in congue arcu. Nam in mauris molestie, pretium nisi eget, porttitor ligula. Maecenas lobortis sem vitae tempus dapibus. Sed sed turpis libero. Nunc ac elit id leo posuere pharetra vitae ac velit. Duis sed arcu nulla.",
+                keywords: "",
+                height: heightofplant[Math.floor((Math.random() * 4))],
+                light: lightofplant[Math.floor((Math.random() * 4))],
+                care: careofplant[Math.floor((Math.random() * 4))]
+            },
+
+            {
+                name: "Antler Fern",
+                imageURL: "img/antlerfern.jpg",
+                description: "Some quick example text to build on the card title and make up the bulk of the card's content.",
+                longDescription: "Ut vel imperdiet dui. Maecenas ante enim, sodales at efficitur id, bibendum ut mauris. Proin volutpat est eget luctus laoreet. Curabitur suscipit posuere mi. Nullam mattis, elit in cursus aliquam, neque purus fermentum enim, eu laoreet nibh massa sed odio. Ut faucibus, sem eu egestas molestie, sapien lectus pharetra sapien, id consequat massa lacus ut dui. Donec tortor nibh, imperdiet sed porttitor a, efficitur in ante. Sed at pulvinar neque, id pretium magna. Vivamus volutpat nisl lectus, fringilla lacinia leo molestie et. Vestibulum id nisi luctus, vulputate massa eu, tincidunt velit. Proin vestibulum nunc a ex pulvinar, eget fermentum tellus porttitor. In iaculis sed erat nec vehicula. Morbi volutpat, ligula quis auctor fermentum, augue quam auctor magna, vel tincidunt nulla erat vitae dui. Sed eu est id sapien vestibulum venenatis eu et nunc. In id auctor urna, sit amet accumsan nulla. Aenean eu nisl luctus, euismod magna sit amet, imperdiet turpis.",
+                keywords: "",
+                height: heightofplant[Math.floor((Math.random() * 4))],
+                light: lightofplant[Math.floor((Math.random() * 4))],
+                care: careofplant[Math.floor((Math.random() * 4))]
+            },
+
+            {
+                name: "Bird of Paradise",
+                imageURL: "img/birdofparadise.jpg",
+                description: "Some quick example text to build on the card title and make up the bulk of the card's content.",
+                longDescription: "Nam odio libero, sodales nec sodales a, tempus at neque. Donec eu diam congue, placerat tellus id, ultrices eros. Nunc a mi libero. Maecenas leo sapien, scelerisque sit amet congue et, fermentum at tellus. Nunc ut dolor est. Mauris pharetra, neque ac malesuada congue, lorem nunc pellentesque nulla, auctor bibendum sapien urna bibendum erat. Duis nec vehicula nibh. Nam nec congue est, non mattis est. Ut ante mi, rhoncus a massa in, tincidunt porta mauris. Nullam sit amet tellus eu magna semper accumsan consectetur eget enim. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum sed rhoncus mauris. Aliquam erat volutpat. Suspendisse ipsum lacus, molestie sed consectetur nec, blandit vel ex. Mauris mattis, nisi nec congue sodales, erat purus ultrices ex, in tincidunt lorem elit rutrum lorem. Donec consequat pharetra tempus.",
+                keywords: "",
+                height: heightofplant[Math.floor((Math.random() * 4))],
+                light: lightofplant[Math.floor((Math.random() * 4))],
+                care: careofplant[Math.floor((Math.random() * 4))]
+            },
+
+            {
+                name: "Birds Nest Fern",
+                imageURL: "img/birdsnestfern.jpg",
+                description: "Some quick example text to build on the card title and make up the bulk of the card's content.",
+                longDescription: "Nam odio libero, sodales nec sodales a, tempus at neque. Donec eu diam congue, placerat tellus id, ultrices eros. Nunc a mi libero. Maecenas leo sapien, scelerisque sit amet congue et, fermentum at tellus. Nunc ut dolor est. Mauris pharetra, neque ac malesuada congue, lorem nunc pellentesque nulla, auctor bibendum sapien urna bibendum erat. Duis nec vehicula nibh. Nam nec congue est, non mattis est. Ut ante mi, rhoncus a massa in, tincidunt porta mauris. Nullam sit amet tellus eu magna semper accumsan consectetur eget enim. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum sed rhoncus mauris. Aliquam erat volutpat. Suspendisse ipsum lacus, molestie sed consectetur nec, blandit vel ex. Mauris mattis, nisi nec congue sodales, erat purus ultrices ex, in tincidunt lorem elit rutrum lorem. Donec consequat pharetra tempus.",
+                keywords: "",
+                height: heightofplant[Math.floor((Math.random() * 4))],
+                light: lightofplant[Math.floor((Math.random() * 4))],
+                care: careofplant[Math.floor((Math.random() * 4))]
+            },
+
+            {
+                name: "Cactus",
+                imageURL: "img/cactus.jpg",
+                description: "Some quick example text to build on the card title and make up the bulk of the card's content.",
+                longDescription: "Nam odio libero, sodales nec sodales a, tempus at neque. Donec eu diam congue, placerat tellus id, ultrices eros. Nunc a mi libero. Maecenas leo sapien, scelerisque sit amet congue et, fermentum at tellus. Nunc ut dolor est. Mauris pharetra, neque ac malesuada congue, lorem nunc pellentesque nulla, auctor bibendum sapien urna bibendum erat. Duis nec vehicula nibh. Nam nec congue est, non mattis est. Ut ante mi, rhoncus a massa in, tincidunt porta mauris. Nullam sit amet tellus eu magna semper accumsan consectetur eget enim. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum sed rhoncus mauris. Aliquam erat volutpat. Suspendisse ipsum lacus, molestie sed consectetur nec, blandit vel ex. Mauris mattis, nisi nec congue sodales, erat purus ultrices ex, in tincidunt lorem elit rutrum lorem. Donec consequat pharetra tempus.",
+                keywords: "",
+                height: heightofplant[Math.floor((Math.random() * 4))],
+                light: lightofplant[Math.floor((Math.random() * 4))],
+                care: careofplant[Math.floor((Math.random() * 4))]
+            },
+
+            {
+                name: "Dracaena",
+                imageURL: "img/dracaena.jpg",
+                description: "Some quick example text to build on the card title and make up the bulk of the card's content.",
+                longDescription: "Nam odio libero, sodales nec sodales a, tempus at neque. Donec eu diam congue, placerat tellus id, ultrices eros. Nunc a mi libero. Maecenas leo sapien, scelerisque sit amet congue et, fermentum at tellus. Nunc ut dolor est. Mauris pharetra, neque ac malesuada congue, lorem nunc pellentesque nulla, auctor bibendum sapien urna bibendum erat. Duis nec vehicula nibh. Nam nec congue est, non mattis est. Ut ante mi, rhoncus a massa in, tincidunt porta mauris. Nullam sit amet tellus eu magna semper accumsan consectetur eget enim. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum sed rhoncus mauris. Aliquam erat volutpat. Suspendisse ipsum lacus, molestie sed consectetur nec, blandit vel ex. Mauris mattis, nisi nec congue sodales, erat purus ultrices ex, in tincidunt lorem elit rutrum lorem. Donec consequat pharetra tempus.",
+                keywords: "",
+                height: heightofplant[Math.floor((Math.random() * 4))],
+                light: lightofplant[Math.floor((Math.random() * 4))],
+                care: careofplant[Math.floor((Math.random() * 4))]
+            },
+
+            {
+                name: "Iron Plant",
+                imageURL: "img/ironplant.jpg",
+                description: "Some quick example text to build on the card title and make up the bulk of the card's content.",
+                longDescription: "Nam odio libero, sodales nec sodales a, tempus at neque. Donec eu diam congue, placerat tellus id, ultrices eros. Nunc a mi libero. Maecenas leo sapien, scelerisque sit amet congue et, fermentum at tellus. Nunc ut dolor est. Mauris pharetra, neque ac malesuada congue, lorem nunc pellentesque nulla, auctor bibendum sapien urna bibendum erat. Duis nec vehicula nibh. Nam nec congue est, non mattis est. Ut ante mi, rhoncus a massa in, tincidunt porta mauris. Nullam sit amet tellus eu magna semper accumsan consectetur eget enim. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum sed rhoncus mauris. Aliquam erat volutpat. Suspendisse ipsum lacus, molestie sed consectetur nec, blandit vel ex. Mauris mattis, nisi nec congue sodales, erat purus ultrices ex, in tincidunt lorem elit rutrum lorem. Donec consequat pharetra tempus.",
+                keywords: "",
+                height: heightofplant[Math.floor((Math.random() * 4))],
+                light: lightofplant[Math.floor((Math.random() * 4))],
+                care: careofplant[Math.floor((Math.random() * 4))]
+            },
+
+            {
+                name: "Pothos",
+                imageURL: "img/pothos.jpg",
+                description: "Some quick example text to build on the card title and make up the bulk of the card's content.",
+                longDescription: "Nam odio libero, sodales nec sodales a, tempus at neque. Donec eu diam congue, placerat tellus id, ultrices eros. Nunc a mi libero. Maecenas leo sapien, scelerisque sit amet congue et, fermentum at tellus. Nunc ut dolor est. Mauris pharetra, neque ac malesuada congue, lorem nunc pellentesque nulla, auctor bibendum sapien urna bibendum erat. Duis nec vehicula nibh. Nam nec congue est, non mattis est. Ut ante mi, rhoncus a massa in, tincidunt porta mauris. Nullam sit amet tellus eu magna semper accumsan consectetur eget enim. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum sed rhoncus mauris. Aliquam erat volutpat. Suspendisse ipsum lacus, molestie sed consectetur nec, blandit vel ex. Mauris mattis, nisi nec congue sodales, erat purus ultrices ex, in tincidunt lorem elit rutrum lorem. Donec consequat pharetra tempus.",
+                keywords: "",
+                height: heightofplant[Math.floor((Math.random() * 4))],
+                light: lightofplant[Math.floor((Math.random() * 4))],
+                care: careofplant[Math.floor((Math.random() * 4))]
+            },
+
+            {
+                name: "Pathos",
+                imageURL: "img/pothos.jpg",
+                description: "Some quick example text to build on the card title and make up the bulk of the card's content.",
+                longDescription: "Nam odio libero, sodales nec sodales a, tempus at neque. Donec eu diam congue, placerat tellus id, ultrices eros. Nunc a mi libero. Maecenas leo sapien, scelerisque sit amet congue et, fermentum at tellus. Nunc ut dolor est. Mauris pharetra, neque ac malesuada congue, lorem nunc pellentesque nulla, auctor bibendum sapien urna bibendum erat. Duis nec vehicula nibh. Nam nec congue est, non mattis est. Ut ante mi, rhoncus a massa in, tincidunt porta mauris. Nullam sit amet tellus eu magna semper accumsan consectetur eget enim. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum sed rhoncus mauris. Aliquam erat volutpat. Suspendisse ipsum lacus, molestie sed consectetur nec, blandit vel ex. Mauris mattis, nisi nec congue sodales, erat purus ultrices ex, in tincidunt lorem elit rutrum lorem. Donec consequat pharetra tempus.",
+                keywords: "",
+                height: heightofplant[Math.floor((Math.random() * 4))],
+                light: lightofplant[Math.floor((Math.random() * 4))],
+                care: careofplant[Math.floor((Math.random() * 4))]
+            },
+
+            {
+                name: "Zeezee",
+                imageURL: "img/zeezee.jpg",
+                description: "Some quick example text to build on the card title and make up the bulk of the card's content.",
+                longDescription: "Nam odio libero, sodales nec sodales a, tempus at neque. Donec eu diam congue, placerat tellus id, ultrices eros. Nunc a mi libero. Maecenas leo sapien, scelerisque sit amet congue et, fermentum at tellus. Nunc ut dolor est. Mauris pharetra, neque ac malesuada congue, lorem nunc pellentesque nulla, auctor bibendum sapien urna bibendum erat. Duis nec vehicula nibh. Nam nec congue est, non mattis est. Ut ante mi, rhoncus a massa in, tincidunt porta mauris. Nullam sit amet tellus eu magna semper accumsan consectetur eget enim. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum sed rhoncus mauris. Aliquam erat volutpat. Suspendisse ipsum lacus, molestie sed consectetur nec, blandit vel ex. Mauris mattis, nisi nec congue sodales, erat purus ultrices ex, in tincidunt lorem elit rutrum lorem. Donec consequat pharetra tempus.",
+                keywords: "",
+                height: heightofplant[Math.floor((Math.random() * 4))],
+                light: lightofplant[Math.floor((Math.random() * 4))],
+                care: careofplant[Math.floor((Math.random() * 4))]
+            },
+            
+        ];
+
+        var explainers = [
+            {
+                name: "Height",
+                description: "Some quick example text to build on the card title and make up the bulk of the card's content.",
+                longDescription: "Nam odio libero, sodales nec sodales a, tempus at neque. Donec eu diam congue, placerat tellus id, ultrices eros. Nunc a mi libero. Maecenas leo sapien, scelerisque sit amet congue et, fermentum at tellus. Nunc ut dolor est. Mauris pharetra, neque ac malesuada congue, lorem nunc pellentesque nulla, auctor bibendum sapien urna bibendum erat. Duis nec vehicula nibh. Nam nec congue est, non mattis est. Ut ante mi, rhoncus a massa in, tincidunt porta mauris. Nullam sit amet tellus eu magna semper accumsan consectetur eget enim. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum sed rhoncus mauris. Aliquam erat volutpat. Suspendisse ipsum lacus, molestie sed consectetur nec, blandit vel ex. Mauris mattis, nisi nec congue sodales, erat purus ultrices ex, in tincidunt lorem elit rutrum lorem. Donec consequat pharetra tempus.",
+            },
+
+            {
+                name: "Light",
+                description: "Some quick example text to build on the card title and make up the bulk of the card's content.",
+                longDescription: "Nam odio libero, sodales nec sodales a, tempus at neque. Donec eu diam congue, placerat tellus id, ultrices eros. Nunc a mi libero. Maecenas leo sapien, scelerisque sit amet congue et, fermentum at tellus. Nunc ut dolor est. Mauris pharetra, neque ac malesuada congue, lorem nunc pellentesque nulla, auctor bibendum sapien urna bibendum erat. Duis nec vehicula nibh. Nam nec congue est, non mattis est. Ut ante mi, rhoncus a massa in, tincidunt porta mauris. Nullam sit amet tellus eu magna semper accumsan consectetur eget enim. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum sed rhoncus mauris. Aliquam erat volutpat. Suspendisse ipsum lacus, molestie sed consectetur nec, blandit vel ex. Mauris mattis, nisi nec congue sodales, erat purus ultrices ex, in tincidunt lorem elit rutrum lorem. Donec consequat pharetra tempus.",
+            },
+
+            {
+                name: "Care",
+                description: "Some quick example text to build on the card title and make up the bulk of the card's content.",
+                longDescription: "Nam odio libero, sodales nec sodales a, tempus at neque. Donec eu diam congue, placerat tellus id, ultrices eros. Nunc a mi libero. Maecenas leo sapien, scelerisque sit amet congue et, fermentum at tellus. Nunc ut dolor est. Mauris pharetra, neque ac malesuada congue, lorem nunc pellentesque nulla, auctor bibendum sapien urna bibendum erat. Duis nec vehicula nibh. Nam nec congue est, non mattis est. Ut ante mi, rhoncus a massa in, tincidunt porta mauris. Nullam sit amet tellus eu magna semper accumsan consectetur eget enim. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum sed rhoncus mauris. Aliquam erat volutpat. Suspendisse ipsum lacus, molestie sed consectetur nec, blandit vel ex. Mauris mattis, nisi nec congue sodales, erat purus ultrices ex, in tincidunt lorem elit rutrum lorem. Donec consequat pharetra tempus.",
+            },
+        ]
+
+        function addCards(list, decks, tips) {
+
+            if (tips != undefined) {
+                var position = Math.floor((Math.random() * list.length));
+                for (i = 0; i < tips.length; i++) {
+                    list.splice((position + i*3), 0, tips[i])
+                };
+            };
+
+            var cards = "";
+            if (decks) {
+                cards = "<div class='card-deck'>";
+            } else {
+                cards = "<div class='card-columns'>";
+            };
+            for (i = 0; i < list.length; i++) {
+                cards += '<div class="card"> <img class="card-img-top" src="' + list[i].imageURL + '" alt=""> <div class="card-body"> <h5 class="card-title">' +  list[i].name + '</h5> <p class="card-text">' + list[i].description + '</p> <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#plantModal" data-i="' + i + '">Go somewhere</button> </div> <span class="keywords" style="display: none;">' + list[i].keywords + '</span> <span class="height">' + list[i].height + '</span> <span class="light">' + list[i].light + '</span> <span class="care">' + list[i].care + '</span> </div>';
+                if ((i + 1) % 4 == 0 && decks == true) {
+                    cards += '</div><div class="card-deck">';
+                };
+             };
+
+            document.getElementById("plantlist-inner").innerHTML = cards += "</div>";
+        };
+
+        addCards(plants, true, explainers);
+        
+
+        $('#plantModal').on('show.bs.modal', function (event) {
+                var button = $(event.relatedTarget);
+                var integer = button.data('i');
+                var title = plants[integer].name;
+                var content = plants[integer].longDescription;
+                var image = plants[integer].imageURL;
+                $('#plantModal').find('.modal-title').html(title);
+                $('#plantModal').find('#modal-content-container').html('<p>' + content + '</p>');
+                $('#plantModal').find('#modal-image-container').html('<img src="' + image + '" alt="' + title + '" class="img-fluid">');
+            });
+
         function plantfilter() {
             var value = $("#plantsearch").val().toLowerCase();
             var pheight = $("#plantheight").val().toLowerCase();
             var plight = $("#plantlight").val().toLowerCase();
             var pcare = $("#plantcare").val().toLowerCase();
-            console.log(pheight);
             $("#plantlist .card").filter(function() {
               $(this).toggle($(this).children(".height").text().toLowerCase().indexOf(pheight) > -1 && $(this).children(".light").text().toLowerCase().indexOf(plight) > -1 && $(this).children(".care").text().toLowerCase().indexOf(pcare) > -1 && $(this).children(".keywords").text().toLowerCase().indexOf(value) > -1)
             });
@@ -205,27 +298,6 @@
             $("select").on("change", function() {
                 plantfilter();
             });
-
-          /*$("#plantheight").on("change", function() {
-            var pheight = $(this).val().toLowerCase();
-            $("#plantlist .height").filter(function() {
-              $(this).parent().toggle($(this).text().toLowerCase().indexOf(value) > -1)
-            });
-          });
-
-          $("#plantlight").on("change", function() {
-            var plight = $(this).val().toLowerCase();
-            $("#plantlist .light").filter(function() {
-              $(this).parent().toggle($(this).text().toLowerCase().indexOf(value) > -1)
-            });
-          });
-
-          $("#plantcare").on("change", function() {
-            var pcare = $(this).val().toLowerCase();
-            $("#plantlist .care").filter(function() {
-              $(this).parent().toggle($(this).text().toLowerCase().indexOf(value) > -1)
-            });
-          });*/
         });
     </script>
 
