@@ -22,5 +22,23 @@
 .modal-popover.bottom {
   top: 66.66%; }
 
-.carousel {
-  background-color: bisque; }
+.carousel img {
+  max-height: 350px; }
+
+#plantcarousel {
+  margin-top: 40px; }
+
+.carousel-item {
+  background-color: bisque;
+  height: 350px; }
+  .carousel-item .row {
+    height: 100%; }
+  .carousel-item .carousel-text {
+    padding: 4em; }
+
+.card {
+  height: 100%; }
+
+[data-card-type=explainer] {
+  background-color: darkolivegreen;
+  color: wheat; }

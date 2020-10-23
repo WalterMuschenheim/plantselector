@@ -32,5 +32,31 @@
 }
 
 .carousel {
-    background-color: bisque;
+    img {
+        max-height: 350px;
+    }
 }
+
+#plantcarousel {
+    margin-top: 40px;
+}
+
+.carousel-item {
+    background-color: bisque;
+    height: 350px;
+    .row {
+        height: 100%;
+    }
+    .carousel-text {
+        padding: 4em;
+    }
+}
+
+.card {
+    height: 100%;
+}
+
+[data-card-type=explainer] {
+    background-color: darkolivegreen;
+    color: wheat;
+  }
