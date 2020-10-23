@@ -22,7 +22,18 @@
         <div class="row row-content">
             <div class="col">
                 <div class="carousel" id="instructions" data-ride="carousel">
-
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="img/clipart/bushyplant.jpg" class="d-block fluid" alt="bushy plant">
+                            <div><span id="carousellink1">Care</span><span id="carousellink2">Light</span></div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="img/clipart/tallplant.jpg" class="d-block right w-40" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="img/clipart/trailingplant.jpg" class="d-block right w-40" alt="...">
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -275,6 +286,16 @@
         };
 
         addCards(plants, false, explainers);
+
+        $('.carousel').carousel()
+
+        $('#carousellink1').click(function() {
+            $('.carousel').carousel(2);
+        });
+
+        $('#carousellink2').click(function() {
+            $('.carousel').carousel(3);
+        });
 
         $(function () {
             $('[data-toggle="popover"]').popover()

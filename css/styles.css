@@ -1,32 +1,26 @@
 #modal-image-container {
-    width: 100%;
-    height: auto;
-}
+  width: 100%;
+  height: auto; }
 
 .modal-popover {
-    position: absolute;
-    width: 100%;
-    height: 33.33%;
-}
-
-.modal-popover.top {
-    top: 0;
-}
-
-.modal-popover.middle {
-    top: 33.33%;
-}
-
-.modal-popover.bottom {
-    top: 66.66%;
-}
-
-.modal-popover a {
+  position: absolute;
+  width: 100%;
+  height: 33.33%; }
+  .modal-popover a {
     width: 100%;
     height: 100%;
-    display: inline-block;
-}
+    display: inline-block; }
+  .modal-popover a:focus {
+    outline: none; }
 
-.modal-popover a:focus {
-    outline: none;
-}
+.modal-popover.top {
+  top: 0; }
+
+.modal-popover.middle {
+  top: 33.33%; }
+
+.modal-popover.bottom {
+  top: 66.66%; }
+
+.carousel {
+  background-color: bisque; }
