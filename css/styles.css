@@ -1,3 +1,16 @@
+body {
+  font-family: "Roboto", sans-serif; }
+  body h5 {
+    font-family: "Poppins", sans-serif;
+    font-weight: 100; }
+  body h4 {
+    font-family: "Poppins", sans-serif;
+    font-weight: 300; }
+
+.navbar-brand {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300; }
+
 #modal-image-container {
   width: 100%;
   height: auto; }
@@ -22,14 +35,17 @@
 .modal-popover.bottom {
   top: 66.66%; }
 
-.carousel img {
-  max-height: 350px; }
+.carousel {
+  font-family: "Playfair Display", "Times New Roman", Times, serif; }
+  .carousel img {
+    max-height: 330px; }
 
 #plantcarousel {
   margin-top: 40px; }
 
 .carousel-item {
   background-color: bisque;
+  color: darkslategrey;
   height: 350px; }
   .carousel-item .row {
     height: 100%; }
@@ -39,6 +55,13 @@
 .card {
   height: 100%; }
 
-[data-card-type=explainer] {
+.card:not(.explainer):hover {
+  cursor: pointer; }
+
+.explainer {
   background-color: darkolivegreen;
-  color: wheat; }
+  color: antiquewhite;
+  font-family: "Playfair Display", "Times New Roman", Times, serif; }
+  .explainer h5 {
+    font-family: "EB Garamond", "Times New Roman", Times, serif;
+    font-weight: bolder; }

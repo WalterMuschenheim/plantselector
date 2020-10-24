@@ -1,3 +1,30 @@
+$bg-color: bisque;
+$color: darkslategrey;
+$header: 'Poppins', sans-serif;
+$body: 'Roboto', sans-serif;
+$alt-bg-color: darkolivegreen;
+$alt-color: antiquewhite;
+$alt-header: 'EB Garamond', 'Times New Roman', Times, serif;
+$alt-body: 'Playfair Display', 'Times New Roman', Times, serif;
+
+
+body {
+    font-family: $body;
+    h5 {
+        font-family: $header;
+        font-weight: 100;
+    }
+    h4 {
+        font-family: $header;
+        font-weight: 300;
+    }
+}
+
+.navbar-brand {
+    font-family: $header;
+    font-weight: 300;
+}
+
 #modal-image-container {
     width: 100%;
     height: auto;
@@ -32,8 +59,9 @@
 }
 
 .carousel {
+    font-family: $alt-body;
     img {
-        max-height: 350px;
+        max-height: 330px;
     }
 }
 
@@ -42,7 +70,8 @@
 }
 
 .carousel-item {
-    background-color: bisque;
+    background-color: $bg-color;
+    color: $color;
     height: 350px;
     .row {
         height: 100%;
@@ -56,7 +85,16 @@
     height: 100%;
 }
 
-[data-card-type=explainer] {
-    background-color: darkolivegreen;
-    color: wheat;
+.card:not(.explainer):hover {
+    cursor: pointer;
+}
+
+.explainer {
+    background-color: $alt-bg-color;
+    color: $alt-color;
+    font-family: $alt-body;
+    h5 {
+        font-family: $alt-header;
+        font-weight: bolder;
+    }
   }
