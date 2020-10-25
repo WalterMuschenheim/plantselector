@@ -7,9 +7,45 @@ body {
     font-family: "Poppins", sans-serif;
     font-weight: 300; }
 
+.carousel-btn-container {
+  background: bisque;
+  width: 100%;
+  height: 100%; }
+
+.carousel {
+  font-family: "Playfair Display", "Times New Roman", Times, serif; }
+  .carousel img {
+    max-height: 330px; }
+
+#plantcarousel {
+  margin-top: 40px; }
+
+.carousel-item {
+  background-color: bisque;
+  color: darkslategrey;
+  height: 350px; }
+  .carousel-item .row {
+    height: 100%; }
+  .carousel-item .carousel-text {
+    padding: 4em; }
+
 .navbar-brand {
   font-family: "Poppins", sans-serif;
   font-weight: 300; }
+
+.card {
+  height: 100%; }
+
+.card:not(.explainer):hover {
+  cursor: pointer; }
+
+.explainer {
+  background-color: darkolivegreen;
+  color: antiquewhite;
+  font-family: "Playfair Display", "Times New Roman", Times, serif; }
+  .explainer h5 {
+    font-family: "EB Garamond", "Times New Roman", Times, serif;
+    font-weight: bolder; }
 
 #modal-image-container {
   width: 100%;
@@ -34,34 +70,3 @@ body {
 
 .modal-popover.bottom {
   top: 66.66%; }
-
-.carousel {
-  font-family: "Playfair Display", "Times New Roman", Times, serif; }
-  .carousel img {
-    max-height: 330px; }
-
-#plantcarousel {
-  margin-top: 40px; }
-
-.carousel-item {
-  background-color: bisque;
-  color: darkslategrey;
-  height: 350px; }
-  .carousel-item .row {
-    height: 100%; }
-  .carousel-item .carousel-text {
-    padding: 4em; }
-
-.card {
-  height: 100%; }
-
-.card:not(.explainer):hover {
-  cursor: pointer; }
-
-.explainer {
-  background-color: darkolivegreen;
-  color: antiquewhite;
-  font-family: "Playfair Display", "Times New Roman", Times, serif; }
-  .explainer h5 {
-    font-family: "EB Garamond", "Times New Roman", Times, serif;
-    font-weight: bolder; }
