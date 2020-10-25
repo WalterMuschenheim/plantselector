@@ -6,6 +6,11 @@ $alt-bg-color: darkolivegreen;
 $alt-color: antiquewhite;
 $alt-header: 'EB Garamond', 'Times New Roman', Times, serif;
 $alt-body: 'Playfair Display', 'Times New Roman', Times, serif;
+$alt-link: burlywood;
+$alt-link-hover: peru;
+$media-sm: 576px;
+$media-md: 768px;
+$media-lg: 992px;
 
 
 body {
@@ -30,6 +35,11 @@ body {
     font-family: $alt-body;
     img {
         max-height: 330px;
+        &.mb-3{
+            @media screen and (max-width: $media-sm) {
+                padding: 5px;
+            }
+        }
     }
 }
 
@@ -40,12 +50,28 @@ body {
 .carousel-item {
     background-color: $bg-color;
     color: $color;
-    height: 350px;
-    .row {
+    @media screen and (min-width: $media-lg) {
+        height: 370px;
+    }
+    @media screen and (min-width: $media-md) and (max-width: $media-lg) {
+        height: 550px;
+    }
+    > .row {
         height: 100%;
+    }
+    .carousel-text-right {
+        padding: 4em;
+        @media screen and (min-width: $media-sm) {
+            padding: 4em 4em 0 0;
+        }
     }
     .carousel-text {
         padding: 4em;
+    }
+    .plant-center {
+        @media screen and (max-width: $media-md) {
+            text-align: center;
+        } 
     }
 }
 
@@ -66,6 +92,12 @@ body {
     background-color: $alt-bg-color;
     color: $alt-color;
     font-family: $alt-body;
+    a {
+        color: $alt-link;
+        &:hover {
+            color: $alt-link-hover;
+        }
+    }
     h5 {
         font-family: $alt-header;
         font-weight: bolder;
