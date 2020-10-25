@@ -64,6 +64,7 @@ $('#carouselcollapse').on('show.bs.collapse', function () {
 
 $(document).ready(function() {
     var distance = $('.navbar').offset();
+    var height = $('.navbar').outerHeight();
     var offset = distance.top;
 
     $('#carouselcollapse').on('hidden.bs.collapse', function () {
@@ -79,8 +80,10 @@ $(document).ready(function() {
     $(document).on('scroll', function() {
         if ($(document).scrollTop() > offset) {
             $('.navbar').addClass('navbar-sticky');
+            $('body').attr('style', 'padding-top: ' + height + 'px;')
         } else {
             $('.navbar').removeClass('navbar-sticky');
+            $('body').attr('style', 'padding-top: 0px;')
         }
     })
 
