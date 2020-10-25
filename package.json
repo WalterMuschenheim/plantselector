@@ -9,7 +9,12 @@
     "lite": "lite-server",
     "scss": "node-sass -o css/ css/",
     "watch:scss": "onchange 'css/*.scss' -- npm run scss",
-    "watch:all": "parallelshell 'npm run watch:scss' 'npm run lite'"
+    "watch:all": "parallelshell 'npm run watch:scss' 'npm run lite'",
+    "clean": "rimraf dist",
+    "copyfonts": "copyfiles -f node_modules/font-awesome/fonts/* dist/fonts",
+    "imagemin": "imagemin img/* -o dist/img && imagemin img/clipart/* -o dist/img/clipart",
+    "usemin": "usemin index.html -d dist --htmlmin -o dist/index.html && usemin single-plant.html -d dist --htmlmin -o dist/single-plant.html",
+    "build": "npm run clean && npm run copyfonts && npm run imagemin && npm run usemin"
   },
   "repository": {
     "type": "git",
@@ -19,10 +24,17 @@
   "license": "ISC",
   "homepage": "https://github.com/WalterMuschenheim/plantselector.git#readme",
   "devDependencies": {
+    "cssmin": "^0.4.3",
+    "htmlmin": "0.0.7",
     "lite-server": "^2.5.4",
     "node-sass": "^4.14.1",
     "onchange": "^7.1.0",
-    "parallelshell": "^3.0.1"
+    "parallelshell": "^3.0.1",
+    "rimraf": "^3.0.2",
+    "uglify-js": "^3.11.3",
+    "usemin-cli": "^0.6.0",
+    "copyfiles": "^2.4.0",
+    "imagemin-cli": "^6.0.0"
   },
   "dependencies": {
     "bootstrap": "^4.5.2",

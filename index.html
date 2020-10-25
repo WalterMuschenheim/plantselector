@@ -8,9 +8,11 @@
       <meta http-equiv="x-ua-compatible" content="ie=edge">
   
       <!-- Bootstrap CSS -->
+      <!-- build:css css/main.css -->
       <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
       <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
       <link rel="stylesheet" href="css/styles.css">
+      <!-- endbuild -->
       <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&family=Merriweather&family=Merriweather+Sans:wght@300;400&family=Playfair+Display&family=Poppins:wght@100;200;300;400&family=Roboto&display=swap" rel="stylesheet">
 
     <title>Plant Selector</title>
@@ -65,12 +67,9 @@
         <a class="navbar-brand" href="#">Plant Selector</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navcollapse"><span class="navbar-toggler-icon"></span></button>
         <div id="navcollapse" class="collapse navbar-collapse">
-
-            
-
             <form class="form-inline navbar-nav">
 
-                <button data-toggle="collapse" data-target="#carouselcollapse" class="btn btn-outline-secondary nav-item mr-3 mb-3 mb-md-0">Open Guide</button>
+                <button type="button" data-toggle="collapse" data-target="#carouselcollapse" class="btn btn-outline-secondary nav-item mr-3 mb-3 mb-md-0">Guide</button>
 
                 <div class="form-group nav-item mr-3">
                     <select id="plantheight" class="custom-select">
@@ -148,11 +147,13 @@
     </div>
 
     <!-- jQuery first, then Popper.js, then Bootstrap JS. -->
+    <!-- build:js js/main.js -->
     <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
     <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="scripts/plantarray.js"></script>
     <script src="scripts/plantfunctions.js"></script>
+    <!-- endbuild -->
 
 
 </body>
