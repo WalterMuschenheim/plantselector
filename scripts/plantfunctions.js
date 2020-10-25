@@ -1,3 +1,5 @@
+/** creates a grid or mosaic of cards from the data in an array */
+
 function addCards(list, rows, tips) {
 
     if (tips != undefined) {
@@ -20,9 +22,7 @@ function addCards(list, rows, tips) {
         cards += '<div class="card';
         if (list[i].imageURL) {cards += ' plant-type" data-i="' + i + '"><img class="card-img-top" src="' + list[i].imageURL + '" alt="">';}
         else {cards +=' explainer">'};
-        cards += '<div class="card-body"> <h5 class="card-title">' +  list[i].name + '</h5> <p class="card-text">' + list[i].description + '</p>';
-        //if (list[i].imageURL) {cards += '<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#plantModal" data-i="' + i + '">Learn More</button>'};
-        cards += '</div> <span class="keywords" style="display: none;">' + list[i].keywords + '</span> <span class="height" style="display: none;">' + list[i].height + '</span> <span class="light" style="display: none;">' + list[i].light + '</span> <span class="care" style="display: none;">' + list[i].care + '</span> </div>';
+        cards += '<div class="card-body"> <h5 class="card-title">' +  list[i].name + '</h5> <p class="card-text">' + list[i].description + '</p> </div> <span class="keywords" style="display: none;">' + list[i].keywords + '</span> <span class="height" style="display: none;">' + list[i].height + '</span> <span class="light" style="display: none;">' + list[i].light + '</span> <span class="care" style="display: none;">' + list[i].care + '</span> </div>';
         if (rows == true) {
             cards += '</div>';
         };
@@ -33,19 +33,34 @@ function addCards(list, rows, tips) {
 
 addCards(plants, false, explainers);
 
+/** sets up the carousel */
+
 $('.carousel').carousel({interval: 99999999});
 
 $('.carousel-care-link').on('click', function() {
+    $('#carouselcollapse').collapse('show');
     $('.carousel').carousel(1);
 });
 
 $('.carousel-light-link').on('click', function() {
+    $('#carouselcollapse').collapse('show');
     $('.carousel').carousel(2);
 });
 
 $('.carousellinkhome').on('click', function() {
+    $('#carouselcollapse').collapse('show');
     $('.carousel').carousel(0);
 });
+
+$('#carouselcollapse').on('hide.bs.collapse', function () {
+    $('#guidebutton').attr('class', 'btn btn-secondary nav-item mr-3 mb-3 mb-md-0');
+});
+
+$('#carouselcollapse').on('show.bs.collapse', function () {
+    $('#guidebutton').attr('class', 'btn btn-outline-secondary nav-item mr-3 mb-3 mb-md-0');
+});
+
+/** activates popovers */
 
 $(function () {
     $('[data-toggle="popover"]').popover()
@@ -55,12 +70,12 @@ $('.popover-dismiss').popover({
     trigger: 'focus'
 });
 
+/** sets up triggers and adds dynamic content to the modal */
+
 $('.plant-type').on('click', function() {
     var integer = $(this).data('i');
     $('#plantModal').modal('toggle');
     
-    //var button = $(event.relatedTarget);
-    //var integer = button.data('i');
     var title = plants[integer].name;
     var content = plants[integer].longDescription;
     var image = plants[integer].imageURL;
@@ -94,6 +109,8 @@ $('.plant-type').on('click', function() {
         $('#plantModal').find('.modal-popover.bottom a').attr('data-content', care);
         $('#plantModal').find('#modal-image-container').html('<img src="' + image + '" alt="' + title + '" class="img-fluid">');
     });*/
+
+/** enables filtering of the card grid based on the form in the navbar */
 
 function plantfilter() {
     var value = $("#plantsearch").val().toLowerCase();
