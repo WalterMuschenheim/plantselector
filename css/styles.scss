@@ -80,6 +80,14 @@ body {
     font-weight: 300;
 }
 
+.navbar-sticky {
+    position: fixed;
+    top: 0px;
+    z-index: 9;
+    background: white;
+    width: 100vw;
+}
+
 .card {
     height: 100%;
 }

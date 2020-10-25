@@ -60,6 +60,34 @@ $('#carouselcollapse').on('show.bs.collapse', function () {
     $('#guidebutton').attr('class', 'btn btn-outline-secondary nav-item mr-3 mb-3 mb-md-0');
 });
 
+/** makes navbar sticky on scroll */
+
+$(document).ready(function() {
+    var distance = $('.navbar').offset();
+    var offset = distance.top;
+
+    $('#carouselcollapse').on('hidden.bs.collapse', function () {
+            offset = 1;
+            console.log(offset);
+    })
+
+    $('#carouselcollapse').on('shown.bs.collapse', function () {
+        offset = distance.top;
+        console.log(offset);
+})
+
+    $(document).on('scroll', function() {
+        if ($(document).scrollTop() > offset) {
+            $('.navbar').addClass('navbar-sticky');
+        } else {
+            $('.navbar').removeClass('navbar-sticky');
+        }
+    })
+
+    
+})
+
+
 /** activates popovers */
 
 $(function () {
