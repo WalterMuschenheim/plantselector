@@ -52,19 +52,157 @@ $('.carousellinkhome').on('click', function() {
     $('.carousel').carousel(0);
 });
 
+/** addes or removes active class from carousel toggle based on bs.collapse events */
+
 $('#carouselcollapse').on('hide.bs.collapse', function () {
-    $('#guidebutton').attr('class', 'btn btn-secondary nav-item mr-3 mb-3 mb-md-0');
+    $('#guideitem').removeClass('active');
 });
 
 $('#carouselcollapse').on('show.bs.collapse', function () {
-    $('#guidebutton').attr('class', 'btn btn-outline-secondary nav-item mr-3 mb-3 mb-md-0');
+    $('#guideitem').addClass('active');
 });
+
+/** adds criteria to array or removes criteria from array on click of links in navbar */
+
+var criteria = [];
+
+$('a[data-critval]').on('click', function() {
+    var criterium = [];
+    var test = $(this).data('critval');
+    if (criteria.find(function(currentVal) {return currentVal[1] == test;}) == undefined){
+        criterium.push($(this).data('crittype'));
+        criterium.push($(this).data('critval'));
+        criteria.push(criterium);
+        $(this).addClass('active');
+        var elementID = 'toast-' + $(this).data('crittype');
+        addToast (elementID, $(this).data('crittype'), $(this).data('critval'));
+        $('#' + elementID).toast('show');
+    } else {
+        var clear = $(this).data('critval');
+        var i = "";
+        while (criteria.find(function(currentVal, index) {
+            i = index;
+            console.log(i + currentVal[1] + clear + '</br>');
+            return currentVal[1] == clear;
+        }) != undefined) {
+            criteria.splice(i, 1);
+        }
+        $(this).removeClass('active');
+        var val = $(this).data('critval');
+        var toastID = "toast" + val.replace(/\s+/g, '');
+        $('#' + toastID).remove();
+    }
+    plantfilter();
+});
+
+$('a[data-critclear]').on('click', function() {
+    var clear = $(this).data('critclear');
+    var i = "";
+    while (criteria.find(function(currentVal, index) {
+        i = index;
+        console.log(i + currentVal[0] + clear + '</br>');
+        return currentVal[0] == clear;
+    }) != undefined) {
+        criteria.splice(i, 1);
+    }
+    var selector = 'a[data-crittype="' + clear + '"]';
+    console.log(selector);
+    $(selector).removeClass('active');
+    $('#toast-' + clear + ' p').remove();
+    plantfilter();
+});
+
+$('.toast').on('hide.bs.toast', function() {
+    var clear = $(this).data('critclear');
+    var i = "";
+    while (criteria.find(function(currentVal, index) {
+        i = index;
+        console.log(i + currentVal[0] + clear + '</br>');
+        return currentVal[0] == clear;
+    }) != undefined) {
+        criteria.splice(i, 1);
+    }
+    var selector = 'a[data-crittype="' + clear + '"]';
+    console.log(selector);
+    $(selector).removeClass('active');
+    $('#toast-' + clear + ' p').remove();
+    plantfilter();
+});
+
+/** adds toasts for selected criteria */
+
+$('.toast').toast();
+$('.toast-p').on('click', function() {
+    var toastID = $(this).attr('id');
+    $('#' + toastID).remove();
+});
+
+function addToast (containerID, type, val) {
+    var toastID = "toast" + val.replace(/\s+/g, '');
+    document.getElementById(containerID).innerHTML += '<p class="toast-p" id="' + toastID + '" >' + val + '</p>';
+}
+
+$('.toast [data-valclear]').on('click', function() {
+    var clear = $(this).data('valclear');
+    for(i = 0; i < criteria.length; i++) {
+        if (criteria[i][1] == clear) {
+            criteria.splice(i);
+        }
+    };
+})
+
+
+/** enables filtering based on search form and the array created by the links in the navbar */
+
+$("#plantsearch").on("keyup", function() {
+    plantfilter();
+});
+
+function plantfilter() {
+    var searchvalue = $("#plantsearch").val().toLowerCase();
+    var cardheight = true;
+    var cardlight = true;
+    var cardcare = true;
+    
+    $("#plantlist .card").filter(function() {
+
+        for (i = 0; i < criteria.length; i++) {
+            if (criteria[i][0] == "height" && $(this).children(".height").text().toLowerCase().indexOf(criteria[i][1]) > -1) {
+                cardheight = true;
+                break
+            } else if (criteria[i][0] == "height" && $(this).children(".height").text().toLowerCase().indexOf(criteria[i][1]) == -1) {
+                cardheight = false;
+            };
+        }
+    
+        for (i = 0; i < criteria.length; i++) {
+            if (criteria[i][0] == "light" && $(this).children(".light").text().toLowerCase().indexOf(criteria[i][1]) > -1) {
+                cardlight = true;
+                break
+            } else if (criteria[i][0] == "light" && $(this).children(".light").text().toLowerCase().indexOf(criteria[i][1]) == -1) {
+                cardlight = false;
+            };
+        }
+    
+        for (i = 0; i < criteria.length; i++) {
+            if (criteria[i][0] == "care" && $(this).children(".care").text().toLowerCase().indexOf(criteria[i][1]) > -1) {
+                cardcare = true;
+                break
+            } else if (criteria[i][0] == "care" && $(this).children(".care").text().toLowerCase().indexOf(criteria[i][1]) == -1) {
+                cardcare = false;
+            };
+        }
+        var cardValue = $(this).children(".keywords").text().toLowerCase();
+        cardValue += $(this).find(".card-title").text().toLowerCase();
+        $(this).toggle(cardheight && cardlight && cardcare && cardValue.indexOf(searchvalue) > -1)
+    });
+};
 
 /** makes navbar sticky on scroll */
 
 $(document).ready(function() {
-    var distance = $('.navbar').offset();
-    var height = $('.navbar').outerHeight();
+    var distance = $('#navbarcontainer').offset();
+    var height = $('#navbarcontainer').outerHeight();
     var offset = distance.top;
 
     $('#carouselcollapse').on('hidden.bs.collapse', function () {
@@ -79,10 +217,10 @@ $(document).ready(function() {
 
     $(document).on('scroll', function() {
         if ($(document).scrollTop() > offset) {
-            $('.navbar').addClass('navbar-sticky');
+            $('#navbarcontainer').addClass('navbar-sticky');
             $('body').attr('style', 'padding-top: ' + height + 'px;')
         } else {
-            $('.navbar').removeClass('navbar-sticky');
+            $('#navbarcontainer').removeClass('navbar-sticky');
             $('body').attr('style', 'padding-top: 0px;')
         }
     })
@@ -143,7 +281,7 @@ $('.plant-type').on('click', function() {
 
 /** enables filtering of the card grid based on the form in the navbar */
 
-function plantfilter() {
+/*function plantfilter() {
     var value = $("#plantsearch").val().toLowerCase();
     var pheight = $("#plantheight").val().toLowerCase();
     var plight = $("#plantlight").val().toLowerCase();
@@ -164,4 +302,4 @@ $(document).ready(function(){
     $("select").on("change", function() {
         plantfilter();
     });
-});
+});*/

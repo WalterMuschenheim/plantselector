@@ -19,6 +19,8 @@
 </head>
 
 <body>
+
+
     <div class="container mt-3">
 
         <!-- guide carousel -->
@@ -58,52 +60,153 @@
             </div>
         </div>
         <!-- end of guide carousel -->
-        
-        <!-- selector menu -->
-        <nav class="navbar navbar-light navbar-expand-lg">
-            <a class="navbar-brand" href="#">Plant Selector</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navcollapse"><span class="navbar-toggler-icon"></span></button>
-            <div id="navcollapse" class="collapse navbar-collapse">
-                <form class="form-inline navbar-nav">
 
-                    <button id="guidebutton" type="button" data-toggle="collapse" data-target="#carouselcollapse" class="btn btn-outline-secondary nav-item mr-3 mb-3 mb-md-0">Guide</button>
+    </div>
+    <div id="navbarcontainer">
+        <div class="container">
+            
+            <!-- selector menu -->
+            <nav class="navbar navbar-light navbar-expand-lg">
+                <a class="navbar-brand" href="#">Plant Selector</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navcollapse"><span class="navbar-toggler-icon"></span></button>
+                <div id="navcollapse" class="collapse navbar-collapse justify-content-between">
 
-                    <div class="form-group nav-item mr-3">
-                        <select id="plantheight" class="custom-select">
-                            <option value=" ">Height</option>
-                            <option value="0 to 1 foot">0 to 1 foot</option>
-                            <option value="1 to 3 feet">1 to 3 feet</option>
-                            <option value="3 to 6 feet">3 to 6 feet</option>
-                            <option value="6 to 9 feet">6 to 9 feet</option>
-                            <option value="over 9 feet">over 9 feet</option>
-                        </select>
-                    </div>
+
+                    <ul class="navbar-nav d-flex ">
+                        <li id="guideitem" class="nav-item active">
+                        <a class="nav-link" id="guidebutton" role="button" data-toggle="collapse" data-target="#carouselcollapse">Guide</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Height
+                            </a>
+                            <div id="plantheight" class="dropdown-menu">
+                                <a class="dropdown-item" data-crittype="height" data-critval="0 to 1 foot">0 to 1 foot</a>
+                                <a class="dropdown-item" data-crittype="height" data-critval="1 to 3 feet">1 to 3 feet</a>
+                                <a class="dropdown-item" data-crittype="height" data-critval="3 to 6 feet">3 to 6 feet</a>
+                                <a class="dropdown-item" data-crittype="height" data-critval="6 to 9 feet">6 to 9 feet</a>
+                                <a class="dropdown-item" data-crittype="height" data-critval="over 9 feet">over 9 feet</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" data-critclear="height">Clear All</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Light
+                            </a>
+                            <div id="plantlight" class="dropdown-menu">
+                                <a class="dropdown-item" data-crittype="light" data-critval="low indirect">low indirect</a>
+                                <a class="dropdown-item" data-crittype="light" data-critval="bright indirect">bright indirect</a>
+                                <a class="dropdown-item" data-crittype="light" data-critval="partial direct">partial direct</a>
+                                <a class="dropdown-item" data-crittype="light" data-critval="full direct">full direct</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" data-critclear="light">Clear All</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Care
+                            </a>
+                            <div id="plantcare" class="dropdown-menu">
+                                <a class="dropdown-item" data-crittype="care" data-critval="loves neglect">loves neglect</a>
+                                <a class="dropdown-item" data-crittype="care" data-critval="tolerates neglect">tolerates neglect</a>
+                                <a class="dropdown-item" data-crittype="care" data-critval="needs attention">needs attention</a>
+                                <a class="dropdown-item" data-crittype="care" data-critval="needs extra attention">needs extra attention</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" data-critclear="care">Clear All</a>
+                            </div>
+                        </li>
+                    </ul>
+
+
+                    <form class="form-inline navbar-nav">
+
+                        <!-- <button id="guidebutton" type="button" data-toggle="collapse" data-target="#carouselcollapse" class="btn btn-outline-secondary nav-item mr-3 mb-3 mb-md-0">Guide</button>
+
+                        <div class="form-group nav-item mr-3">
+                            <select id="plantheight" class="custom-select">
+                                <option value=" ">Height</option>
+                                <option value="0 to 1 foot">0 to 1 foot</option>
+                                <option value="1 to 3 feet">1 to 3 feet</option>
+                                <option value="3 to 6 feet">3 to 6 feet</option>
+                                <option value="6 to 9 feet">6 to 9 feet</option>
+                                <option value="over 9 feet">over 9 feet</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group nav-item mr-3">
+                            <select id="plantlight" class="custom-select">
+                                <option value=" ">Light</option>
+                                <option value="low indirect">low indirect</option>
+                                <option value="bright indirect">bright indirect</option>
+                                <option value="partial direct">partial direct</option>
+                                <option value="full direct">full direct</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group nav-item mr-3">
+                            <select id="plantcare" class="custom-select">
+                                <option value=" ">Care</option>
+                                <option value="loves neglect">loves neglect</option>
+                                <option value="tolerates neglect">tolerates neglect</option>
+                                <option value="needs attention">needs attention</option>
+                                <option value="needs extra attention">needs extra attention</option>
+                            </select>
+                        </div> -->
                     
-                    <div class="form-group nav-item mr-3">
-                        <select id="plantlight" class="custom-select">
-                            <option value=" ">Light</option>
-                            <option value="low indirect">low indirect</option>
-                            <option value="bright indirect">bright indirect</option>
-                            <option value="partial direct">partial direct</option>
-                            <option value="full direct">full direct</option>
-                        </select>
+                        <input class="form-control" id="plantsearch" type="search" placeholder="Keyword Search">
+                    </form>
+                </div>
+                <!-- toasts -->
+                <div class="d-none d-lg-flex" style="max-width: 200px;">
+                    <div id="toastcontainer">
+                        <div role="alert" aria-live="assertive" aria-atomic="true" class="toast" id="toast-height" data-autohide="false" data-critclear="height">
+                            <div class="toast-header">
+                                <svg class="bd-placeholder-img rounded mr-2" width="20" height="20" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><rect width="100%" height="100%" fill="#007aff"></rect></svg>
+                                <strong class="mr-auto">Height</strong>
+                                <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="toast-body">
+                            <!-- values added dynamically -->
+                            </div>
+                        </div>
+                        <div role="alert" aria-live="assertive" aria-atomic="true" class="toast" id="toast-light" data-autohide="false" data-critclear="light">
+                            <div class="toast-header">
+                                <svg class="bd-placeholder-img rounded mr-2" width="20" height="20" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><rect width="100%" height="100%" fill="#007aff"></rect></svg>
+                                <strong class="mr-auto">Light</strong>
+                                <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="toast-body">
+                            <!-- values added dynamically -->
+                            </div>
+                        </div>
+                        <div role="alert" aria-live="assertive" aria-atomic="true" class="toast" id="toast-care" data-autohide="false" data-critclear="care">
+                            <div class="toast-header">
+                                <svg class="bd-placeholder-img rounded mr-2" width="20" height="20" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><rect width="100%" height="100%" fill="#007aff"></rect></svg>
+                                <strong class="mr-auto">Care</strong>
+                                <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="toast-body">
+                            <!-- values added dynamically -->
+                            </div>
+                        </div>
                     </div>
-                    
-                    <div class="form-group nav-item mr-3">
-                        <select id="plantcare" class="custom-select">
-                            <option value=" ">Care</option>
-                            <option value="loves neglect">loves neglect</option>
-                            <option value="tolerates neglect">tolerates neglect</option>
-                            <option value="needs attention">needs attention</option>
-                            <option value="needs extra attention">needs extra attention</option>
-                        </select>
-                    </div>
+                </div>
                 
-                    <input class="form-control" id="plantsearch" type="search" placeholder="Keyword Search">
-                </form>
-            </div>
-        </nav>
-        <!-- end of selector menu -->
+                <!-- end of toasts -->
+            </nav>
+            <!-- end of selector menu -->
+
+            
+        </div>
+    </div>
+    <div class="container">
 
         <!-- plant cards -->
         <div class="container" id="plantlist">
@@ -148,6 +251,7 @@
         </div>
     </div>
     <!-- end of modal -->
+
 
     <!-- jQuery first, then Popper.js, then Bootstrap JS. -->
     <!-- build:js js/main.js -->
