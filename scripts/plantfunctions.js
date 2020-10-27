@@ -75,14 +75,14 @@ $('a[data-critval]').on('click', function() {
         criteria.push(criterium);
         $(this).addClass('active');
         var elementID = 'toast-' + $(this).data('crittype');
-        addToast (elementID, $(this).data('crittype'), $(this).data('critval'));
+        var bodyID = 'toast-body-' + $(this).data('crittype');
+        addToast (bodyID, $(this).data('crittype'), $(this).data('critval'));
         $('#' + elementID).toast('show');
     } else {
         var clear = $(this).data('critval');
         var i = "";
         while (criteria.find(function(currentVal, index) {
             i = index;
-            console.log(i + currentVal[1] + clear + '</br>');
             return currentVal[1] == clear;
         }) != undefined) {
             criteria.splice(i, 1);
@@ -100,13 +100,11 @@ $('a[data-critclear]').on('click', function() {
     var i = "";
     while (criteria.find(function(currentVal, index) {
         i = index;
-        console.log(i + currentVal[0] + clear + '</br>');
         return currentVal[0] == clear;
     }) != undefined) {
         criteria.splice(i, 1);
     }
     var selector = 'a[data-crittype="' + clear + '"]';
-    console.log(selector);
     $(selector).removeClass('active');
     $('#toast-' + clear + ' p').remove();
     plantfilter();
@@ -117,13 +115,11 @@ $('.toast').on('hide.bs.toast', function() {
     var i = "";
     while (criteria.find(function(currentVal, index) {
         i = index;
-        console.log(i + currentVal[0] + clear + '</br>');
         return currentVal[0] == clear;
     }) != undefined) {
         criteria.splice(i, 1);
     }
     var selector = 'a[data-crittype="' + clear + '"]';
-    console.log(selector);
     $(selector).removeClass('active');
     $('#toast-' + clear + ' p').remove();
     plantfilter();
@@ -132,24 +128,33 @@ $('.toast').on('hide.bs.toast', function() {
 /** adds toasts for selected criteria */
 
 $('.toast').toast();
+
 $('.toast-p').on('click', function() {
-    var toastID = $(this).attr('id');
-    $('#' + toastID).remove();
+    //var toastID = $(this).attr('id');
+    console.log(this);
+   // $('#' + toastID).remove();
 });
 
 function addToast (containerID, type, val) {
     var toastID = "toast" + val.replace(/\s+/g, '');
-    document.getElementById(containerID).innerHTML += '<p class="toast-p" id="' + toastID + '" >' + val + '</p>';
+    document.getElementById(containerID).innerHTML += '<p class="toast-p" id="' + toastID + '" data-critval="' + val + '"><a class="text-decoration-none">' + val + '</a></p>';
+    $('.toast-p').on('click', function() {
+        var toastID = $(this).attr('id');
+        var clear = $(this).data('critval');
+        var i = "";
+        while (criteria.find(function(currentVal, index) {
+            i = index;
+            return currentVal[1] == clear;
+        }) != undefined) {
+            criteria.splice(i, 1);
+        }
+        console.log(clear);
+        $('a[data-critval="' + clear + '"]').removeClass('active');
+        $('#' + toastID).remove();
+        plantfilter();
+    });
 }
 
-$('.toast [data-valclear]').on('click', function() {
-    var clear = $(this).data('valclear');
-    for(i = 0; i < criteria.length; i++) {
-        if (criteria[i][1] == clear) {
-            criteria.splice(i);
-        }
-    };
-})
 
 
 /** enables filtering based on search form and the array created by the links in the navbar */
