@@ -80,6 +80,11 @@ body {
     font-weight: 300;
 }
 
+.dropdown-item.active, .dropdown-item:active {
+    color: $bg-color;
+    background-color: $color;
+}
+
 .navbar {
     z-index: 9;
 }
@@ -98,6 +103,12 @@ body {
     right: 10px;
 }
 
+.toast {
+    a {
+        color: $color;
+    }
+}
+
 .toast-p {
     margin: 0;
     padding: 5px;
@@ -113,8 +124,8 @@ body {
 }
 
 .explainer {
-    background-color: $alt-bg-color;
-    color: $alt-color;
+    background-color: $color;
+    color: $bg-color;
     font-family: $alt-body;
     a {
         color: $alt-link;
